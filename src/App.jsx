@@ -1,6 +1,6 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import HomePages from './pages/homePages'
+import HomePages from "./pages/HomePages"
 import ProtectedRoutes from './pages/protectedRoutes'
 import PokeapiPages from './pages/pokeapiPages'
 import Nav from './shares/Nav'
