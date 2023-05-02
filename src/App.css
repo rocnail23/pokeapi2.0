@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+button{
+    border: none;
+}
+
+html,
+body{
+    height: 100%;
+    position: relative;
+}
+
+.app{
+    height: 100vh;
+}
+
+img{
+    width: 100%;
+}

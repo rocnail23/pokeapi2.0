@@ -1,0 +1,67 @@
+.nav{
+    height: 55px;
+}
+
+.bar-red{
+    height: 40px;
+    background-color: red;
+    display: flex;
+    align-items: end;
+}
+
+.icon_bar{
+    width: 40%;
+    max-width: 275px;
+    max-height: 40px;
+}
+
+.bar-black{
+    height: 15px;
+    background-color: black;
+    position: relative;
+}
+
+.circle1{
+    height: 60px;
+    width: 60px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    right: 20px;
+    top: -20px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle2{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle3{
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.circle4{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(81, 76, 76);
+    border-radius: 50%;
+}
+
+

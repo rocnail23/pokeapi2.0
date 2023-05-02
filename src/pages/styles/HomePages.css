@@ -1,0 +1,89 @@
+.HomePages{
+    height: calc(100vh - 55px);
+    background-color: gray;
+    
+}
+
+.Welcome{
+background-color: white;
+height: calc(100% - 55px);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+;
+}
+
+.Welcome img{
+    width: 70%;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.Welcome_phrase{
+    margin-bottom: 10px;
+}
+
+.Welcome_phrase h1{
+    font-size: 40px;
+}
+
+.Welcome_phrase p{
+    font-size: 18px;
+    
+}
+
+.form_name{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_name input{
+    width: 50%;
+    max-width: 250px;
+    height: 25px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 14px -1px rgba(0,0,0,0.75);
+    border-radius: 1px;
+    padding: 5px;
+}
+
+.form_name button{
+    background-color: red;
+    color: white;
+    height: 25px;
+    padding: 2px;
+
+}
+
+.Footer{
+background-color: red;
+height: 55px;
+}
+
+.circle1-b{
+    position: absolute;
+    
+    
+    bottom: 10%;
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.b{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
