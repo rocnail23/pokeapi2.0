@@ -22,10 +22,13 @@ align-items: center;
 
 .Welcome_phrase{
     margin-bottom: 10px;
+    text-align: center;
+    
 }
 
 .Welcome_phrase h1{
     font-size: 40px;
+    
 }
 
 .Welcome_phrase p{

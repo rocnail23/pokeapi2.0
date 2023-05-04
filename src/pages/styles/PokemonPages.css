@@ -1,0 +1,35 @@
+.pokemonPages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 55px);
+    padding: 10px;
+}
+
+.pokemon_notFound{
+    font-size: 25px;
+    width: 250px;
+    
+    border: 1px solid black;
+    position: relative;
+}
+.pokemon_notFound > p{
+    padding: 10px;
+}
+.top_notfound{
+    padding: 20px;
+}
+
+.line{
+    border-top: 1px solid rgb(234, 220, 220);    
+    
+    
+   
+}
+
+hr{
+    
+    position: absolute;
+
+}

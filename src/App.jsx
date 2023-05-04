@@ -4,6 +4,7 @@ import HomePages from "./pages/HomePages"
 import ProtectedRoutes from './pages/ProtectedRoutes'
 import PokeapiPages from './pages/PokeapiPages'
 import Nav from './shares/Nav'
+import PokemonPages from './pages/PokemonPages'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' element={<HomePages/>}/>
       <Route element={<ProtectedRoutes/>}>
         <Route path='/pokeapi'element={<PokeapiPages/>}/>
+        <Route path='/pokemon/:id' element={<PokemonPages/>}/>
         </Route>
      </Routes>
     </div>

@@ -13,10 +13,24 @@ export const pokemonsSlice = createSlice({
 
 export const { setPokemons } = pokemonsSlice.actions;
 
-export const getPokemonsThunk = () => (dispatch) => {
-    return axios.get('https://pokeapi.co/api/v2/pokemon?limit=15&offset=0')
+export const getPokemonsThunk = (filter) => (dispatch) => {
+       if(filter == "pokemon?limit=10&offset=0"){
+        axios.get(`https://pokeapi.co/api/v2/${filter}`)
         .then(res => dispatch(setPokemons(res.data.results)))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+       } else {
+        axios.get(`https://pokeapi.co/api/v2/${filter}`)
+       .then(res => dispatch(setPokemons(res.data.pokemon.map(e => e.pokemon))))
+       .catch(err => console.log(err))
+       }
+       
+
+      
+       
+    
+    
+    
+    
 }
 
 export default pokemonsSlice.reducer;

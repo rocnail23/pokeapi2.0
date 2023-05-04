@@ -1,0 +1,38 @@
+.search_container-60{
+    padding-left: 20px;
+    width: 60%;
+    max-width: 400px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.search_container-100{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    
+}
+
+.form_search{
+ width: 100%;
+ 
+}
+
+.input_pokemon{
+    border: none;
+    height: 25px;
+    width: 70%;
+    box-shadow: 0px 1px 14px -1px rgba(0,0,0,0.75);
+    outline: none;
+    padding: 5px;
+    }
+
+.form_search > button{
+    width: 27%;
+    height: 25px;
+    background-color: red;
+    color: white;
+    padding: 3px;
+    
+}

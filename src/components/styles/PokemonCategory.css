@@ -1,0 +1,28 @@
+.container_category{
+    margin-top: 15px;
+    margin-right: 20px;
+    width: 40%;
+    
+}
+
+.form_select{
+    width: 100%;
+    max-width: 200px;
+}
+
+.select{
+    height: 25px;
+    text-align: center;
+    border: none;
+    box-shadow: -4px 4px 12px -4px rgba(0,0,0,0.75);
+    outline: none;
+    width: 100%;
+    }
+
+.select > option:checked {
+    background-color: red;
+    color: white;
+}   
+
+
+
