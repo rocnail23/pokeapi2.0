@@ -5,11 +5,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./styles/PokemonPages.css";
 import pikachu from "../assets/pikachu.png";
 import SearchPokemon from "../components/SearchPokemon";
+import Loading from "../components/Loading";
 const PokemonPages = () => {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(null);
+  const [isLoading, setisLoading] = useState(false)
 
-  const [isFound, setisFound] = useState(false);
+  const [isFound, setisFound] = useState(true);
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     axios
@@ -18,18 +20,24 @@ const PokemonPages = () => {
         setPokemon(res.data);
         setisFound(false);
       })
+      .finally(() => {
+        setisLoading(true)
+      })
       .catch((err) => {
         if (err.response.data == "Not Found") {
           setisFound(true);
         }
       });
+      
   }, [id]);
     
   console.log(pokemon)
   if (isFound) {
     return (
+      
       <div className="pokemonPages">
-        <div className="pokemon_notFound">
+        <Loading isLoading={isLoading}/>
+        <div className={`pokemon_notFound ${isLoading ? "": "noShow"}`}>
           <div className="top_notfound">
             <SearchPokemon style="search_container-100" />
             <img src={pikachu} alt="" />
@@ -45,7 +53,8 @@ const PokemonPages = () => {
   } else {
     return (
     <div className="pokemonPages">
-      <div className="pokemon_presentation">
+      <Loading isLoading={isLoading}/>
+      <div className={`pokemon_presentation ${isLoading ? "": "noShow"}`}>
       <div className={`background_Pokemon d-${pokemon?.types[0].type.name}`}>
         <img src={pokemon?.sprites.other["official-artwork"].front_default} alt="" />
       </div>
@@ -107,7 +116,21 @@ const PokemonPages = () => {
               }
       </div>
       </div>
-      
+      <div className={`Movements ${isLoading ? "": "noShow"}`}>
+        <div className="Movements_title">
+              <h4>Movements</h4>
+              <div></div>
+        </div>
+        <div className="Movements_container">
+              {pokemon?.moves.map(move => {
+                return <div key={move.move.name}>
+                  <div>
+                    <p>{move.move.name}</p>
+                  </div>
+                </div>
+              })}
+        </div>
+      </div>
     </div>)
   }
 };

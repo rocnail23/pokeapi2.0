@@ -1,9 +1,12 @@
 .pokemonPages{
+    height: calc(100% - 55PX);
+    max-height: 3000PX;
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     padding: 100px 20px 20px 20px ;
-    height: 100%;
+    
 }
 
 .pokemon_notFound{
@@ -38,7 +41,8 @@ hr{
     height: 100vh;
     width: 100%;
     max-width: 800px;
-    max-height: 520px;  
+    max-height: 600px; 
+    min-height: 600px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +51,8 @@ hr{
 }
 
 .background_Pokemon{
-    height: 20%;
+    height: 100px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,6 +61,7 @@ hr{
 }
 
 .background_Pokemon > img{
+    margin-top: 100px;
     width: 160px;
     height: 160px;
     position: absolute;
@@ -111,7 +117,7 @@ hr{
 }
 
 .ability{
-    width: 100%px;
+    width: 100%;
     
 }
 
@@ -129,21 +135,24 @@ hr{
     border: 1px solid black;
 }
 
+.Movements_title,
 .stats_title{
-    margin-top: 25px;
+    margin: 25px ;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 5px;
+
 }
 
 .stats_title > h4{
     font-size: 25px;
 }
 
+
 .stats_title > div{
-    border-top: 1px solid rgb(181, 179, 179);;
+    border-top: 1px solid rgb(181, 179, 179);
     width: 80%;
 }
 
@@ -171,3 +180,49 @@ hr{
     justify-content: space-between;
     margin-top: 10px;
 }
+
+.Movements{
+    margin-top: 25px;
+    box-shadow: 0px 1px 14px -1px rgba(0,0,0,0.75);
+    
+    width: 100%;
+   
+    max-width: 800px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     }
+
+
+.Movements_title >h4{
+ font-size: 25px;
+}
+
+.Movements_title > div{
+    border-top:1px solid rgb(181, 179, 179);
+    width: 65%;
+}
+
+.Movements_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 20px 50PX;
+    }
+
+.Movements_container > div{
+    background-color: rgb(225, 225, 225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 30px;
+    
+
+    
+}    
+
+
