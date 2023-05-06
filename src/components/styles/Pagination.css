@@ -1,0 +1,30 @@
+.container_pagination{
+    margin-bottom: 10px;
+}
+
+.pagination_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    
+}
+
+.pagination_button{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.button_select{
+    background-color: gray;
+}

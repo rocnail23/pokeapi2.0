@@ -14,7 +14,7 @@ export const pokemonsSlice = createSlice({
 export const { setPokemons } = pokemonsSlice.actions;
 
 export const getPokemonsThunk = (filter) => (dispatch) => {
-       if(filter == "pokemon?limit=10&offset=0"){
+       if(filter == "pokemon?limit=1000&offset=0"){
         axios.get(`https://pokeapi.co/api/v2/${filter}`)
         .then(res => dispatch(setPokemons(res.data.results)))
         .catch(err => console.log(err))

@@ -5,13 +5,24 @@ import PokeCard from "../components/PokeCard";
 import "./styles/PokeapiPages.css"
 import SearchPokemon from "../components/SearchPokemon";
 import PokemonCategory from "../components/PokemonCategory";
+import Pagination from "../components/Pagination";
 const PokeapiPages = () => {
   
   const { pokemons, trainerName } = useSelector((reducer) => reducer);
   const dispatch = useDispatch();
-  const [select, setSelect] = useState("pokemon?limit=10&offset=0")
+  const [select, setSelect] = useState("pokemon?limit=1000&offset=0")
+  const [pokemonPerPages, setPokemonPerPages] = useState(10)
+  const [currentPages, setCurrentPages] = useState(1)
   
-  
+  const pages = (number, set) => {
+    setCurrentPages(number)
+    set(number)
+  }
+
+  const pagesPlus = (set,currentPagination) => {
+    setCurrentPages(currentPages + 1)
+    set(currentPagination + 1)
+  }
   
   useEffect(() => {
      
@@ -19,9 +30,12 @@ const PokeapiPages = () => {
       
   }, [dispatch,select]);
 
-  console.log(pokemons)
+ 
   
   
+  let lastPokemon = currentPages * pokemonPerPages
+  let firstPokemon = lastPokemon - pokemonPerPages
+  let currentPokemons = pokemons?.slice(firstPokemon,lastPokemon)
 
   return (
     <div className="pokeApi">
@@ -34,10 +48,11 @@ const PokeapiPages = () => {
       </div>
         
       <div className="container_pokemon">
-        {pokemons?.map((pokemon) => (
+        {currentPokemons.map((pokemon) => (
           <PokeCard key={pokemon.url} pokemon={pokemon} />
         ))}
       </div>
+      <Pagination currentPages={currentPages} pagesPlus={pagesPlus} totalPokemons={pokemons?.length} pages={pages} pokemonPerPages={pokemonPerPages} />
     </div>
   );
 };
