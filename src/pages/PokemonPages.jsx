@@ -31,7 +31,7 @@ const PokemonPages = () => {
       
   }, [id]);
     
-  console.log(pokemon)
+ 
   if (isFound) {
     return (
       
@@ -79,7 +79,7 @@ const PokemonPages = () => {
       <h4>tipo</h4>
       <div className="type">
         {pokemon?.types.map(type => (
-          <p className={`type_display d-${type.type.name}`}>{type.type.name}</p>
+          <p key={type.type.name} className={`type_display d-${type.type.name}`}>{type.type.name}</p>
         ))}
       </div>
       </div>
@@ -87,7 +87,7 @@ const PokemonPages = () => {
           <h4>habilidades</h4>
           <div className="ability">
             {pokemon?.abilities.map(ability => (
-              <p className="ability_display">{ability.ability.name}</p>
+              <p key={ability.ability.name} className="ability_display">{ability.ability.name}</p>
             ))}
           </div>
       </div>
@@ -100,7 +100,7 @@ const PokemonPages = () => {
               {
                 pokemon?.stats.map(stat => {
                   if(["hp","attack","defense","speed"].includes(stat.stat.name)){
-                   return <div>
+                   return <div key={stat.stat.name}>
                         <div className="bar_name">
                           <h4>{stat.stat.name}</h4>
                           <h5>{`${stat.base_stat} / 150`}</h5>

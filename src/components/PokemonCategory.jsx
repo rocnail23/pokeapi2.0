@@ -28,7 +28,7 @@ const [category, setCategory] = useState(null)
         <option value="pokemon?limit=10&offset=0">all</option>
       {
       category?.map(category => (
-      <option value={urltype(category.url)}>{category.name}</option>
+      <option key={category.url} value={urltype(category.url)}>{category.name}</option>
       ))
      }
       </select>

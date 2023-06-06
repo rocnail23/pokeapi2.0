@@ -20,6 +20,8 @@ const PokeCard = ({ pokemon }) => {
     navigate(`/pokemon/${id}`)
   }
 
+ 
+
   return (
     <div className={`poke_card b-${pokemonCard?.types[0].type.name}`} onClick={() => handleClick(pokemonCard?.id)}>
       <div className="body_card">
@@ -37,7 +39,7 @@ const PokeCard = ({ pokemon }) => {
           <h3 className="cardType">
             {pokemonCard?.types.map((type) => {
               if (type.slot == 1) {
-                return type.type.name;
+                return  type.type.name;
               } else if (type.slot == 2) {
                 return `/${type.type.name}`;
               }
@@ -51,7 +53,7 @@ const PokeCard = ({ pokemon }) => {
         {pokemonCard?.stats.map((stat) => {
           if (["hp", "attack", "defense", "speed"].includes(stat.stat.name))
             return (
-              <div className="footer_stat">
+              <div key={stat.stat.name} className="footer_stat">
                 <p className="name_stat">{stat.stat.name}</p>
                 <p
                   className={`stat_points c-${pokemonCard?.types[0].type.name}`}
